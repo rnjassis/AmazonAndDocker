@@ -1,0 +1,10 @@
+version: '3.5'
+
+services:
+  springboot:
+    image: spring-boot-docker-homolog:0.0.1
+    build:
+      context: ../
+      dockerfile: docker-homolog/Dockerfile
+    ports:
+      - "8081:8081"

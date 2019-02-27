@@ -1,0 +1,18 @@
+spring:
+  profiles:
+    active:
+    - dev
+---
+spring:
+  profiles: dev
+  application:
+    name: AmazonAndDocker
+server:
+   port: 8080
+text:
+  yaml: one
+amazon:
+  s3:
+    accessToken:
+    secret:
+    bucket:
