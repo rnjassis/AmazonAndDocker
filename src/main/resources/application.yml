@@ -7,10 +7,43 @@ spring:
   profiles: dev
   application:
     name: AmazonAndDocker
+  sql-datasource:
+    jdbc-url: jdbc:mysql://localhost:3306/amazon
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+#Mongo db configurations
+  mongodb-remote:
+    host: localhost
+    port: 27017
+    collection: mongocollection
+    driver:
+      class: mongodb.jdbc.MongoDriver
+    respositories:
+      enabled: true
+#Utiliza a regra update para tabelas
+  jpa:
+    hibernate:
+      ddl-auto: update
+#JPA
+      dialect: org.hibernate.dialect.MySQL5Dialect
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+#Log
+logging:
+  level:
+    org:
+      hibernate:
+        SQL: DEBUG
+        type:
+          descriptor:
+            sql:
+              BasicBinder: TRACE
+      
+
+        
 server:
    port: 8080
-text:
-  yaml: one
 amazon:
   s3:
     accessToken:
