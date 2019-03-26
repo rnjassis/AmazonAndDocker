@@ -21,7 +21,7 @@ spring:
       class: mongodb.jdbc.MongoDriver
     respositories:
       enabled: true
-#Utiliza a regra update para tabelas
+#Jpa update configurations
   jpa:
     hibernate:
       ddl-auto: update
@@ -29,23 +29,18 @@ spring:
       dialect: org.hibernate.dialect.MySQL5Dialect
       naming:
         physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
-#Log
-logging:
-  level:
-    org:
-      hibernate:
-        SQL: DEBUG
-        type:
-          descriptor:
-            sql:
-              BasicBinder: TRACE
-      
 
         
 server:
    port: 8080
+   
 amazon:
   s3:
     accessToken:
     secret:
     bucket:
+  dynamodb:
+    accessKey:
+    secretKey:
+    region: us-east-2
+    
